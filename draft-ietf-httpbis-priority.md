@@ -130,8 +130,8 @@ consideration and guidance about how servers might act upon signals.
 
 {::boilerplate bcp14-tagged}
 
-The terms Dictionary, sf-boolean, sf-dictionary, and sf-integer are imported from
-{{!STRUCTURED-FIELDS=RFC8941}}.
+The terms Boolean, Dictionary, and Integer, along with the sf-dictionary rule,
+are imported from {{!STRUCTURED-FIELDS=RFC8941}}.
 
 Example HTTP requests and responses use the HTTP/2-style formatting from
 {{HTTP2}}.
@@ -299,7 +299,8 @@ ignored.
 The urgency parameter (`u`) takes an integer between 0 and 7, in descending
 order of priority.
 
-The value is encoded as an sf-integer. The default value is 3.
+The value is encoded as an Integer (see {{Section 3.3.1 of STRUCTURED-FIELDS}}).
+The default value is 3.
 
 Endpoints use this parameter to communicate their view of the precedence of
 HTTP responses. The chosen value of urgency can be based on the expectation that
@@ -328,7 +329,8 @@ responses that have impact on user interaction.
 
 ## Incremental
 
-The incremental parameter (`i`) takes an sf-boolean as the value that indicates
+The incremental parameter (`i`) takes a Boolean (see
+{{Section 3.3.6 of STRUCTURED-FIELDS}}) as the value that indicates
 if an HTTP response can be processed incrementally, i.e., provide some
 meaningful output as chunks of the response arrive.
 
