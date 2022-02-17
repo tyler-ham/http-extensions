@@ -130,8 +130,8 @@ consideration and guidance about how servers might act upon signals.
 
 {::boilerplate bcp14-tagged}
 
-The terms Boolean, Dictionary, and Integer, along with the sf-dictionary rule,
-are imported from {{!STRUCTURED-FIELDS=RFC8941}}.
+This document uses the Boolean, Dictionary, and Integer types from
+{{!STRUCTURED-FIELDS=RFC8941}} along with the sf-dictionary ABNF rule.
 
 Example HTTP requests and responses use the HTTP/2-style formatting from
 {{HTTP2}}.
