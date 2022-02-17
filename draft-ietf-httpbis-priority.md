@@ -24,7 +24,7 @@ github-issue-label: priorities
 
 author:
   -
-    name:
+    fullname:
       :: 奥一穂
       ascii: Kazuho Oku
     org: Fastly
