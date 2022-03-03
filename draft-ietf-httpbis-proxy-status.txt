@@ -168,13 +168,13 @@ Table of Contents
 
    The Proxy-Status HTTP response field allows an intermediary to convey
    additional information about its handling of a response and its
-   associated request.  The syntax of this header field conforms to
-   [STRUCTURED-FIELDS].
+   associated request.
 
-   Its value is a List.  Each member of the List represents an
-   intermediary that has handled the response.  The first member
-   represents the intermediary closest to the origin server, and the
-   last member represents the intermediary closest to the user agent.
+   Its value is a List (see Section 3.1 of [STRUCTURED-FIELDS]).  Each
+   member of the List represents an intermediary that has handled the
+   response.  The first member represents the intermediary closest to
+   the origin server, and the last member represents the intermediary
+   closest to the user agent.
 
    For example:
 
@@ -270,7 +270,7 @@ Table of Contents
 
 2.1.1.  error
 
-   The error parameter's value is an Token that is a proxy error type.
+   The error parameter's value is a Token that is a proxy error type.
    When present, it indicates that the intermediary encountered an issue
    when obtaining this response.
 
@@ -351,7 +351,7 @@ Table of Contents
    protocol used by the intermediary to connect to the next hop when
    obtaining this response.
 
-   The value MUST be either a Token or Byte Sequence, representing a TLS
+   The value MUST be either a Token or Byte Sequence representing a TLS
    ALPN Protocol ID (see <https://www.iana.org/assignments/tls-
    extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-
    ids>).  If the protocol identifier is able to be expressed as a Token
@@ -455,7 +455,7 @@ Table of Contents
    Description:  The intermediary encountered a DNS error when trying to
       find an IP address for the next-hop hostname.
 
-   Extra Parameters:  rcode:  An String conveying the DNS RCODE that
+   Extra Parameters:  rcode:  A String conveying the DNS RCODE that
          indicates the error type.  See [RFC8499], Section 3.
 
                       info-code:  An Integer conveying the Extended DNS
@@ -615,7 +615,7 @@ Table of Contents
 
    Description:  The intermediary is configured to limit the number of
       connections it has to the next hop, and that limit has been
-      passed.
+      exceeded.
 
    Extra Parameters:  None
 
@@ -670,7 +670,7 @@ Table of Contents
          value from the "TLS Alerts" registry.  See [RFC8446].
 
                       alert-message:  A Token or String containing the
-         applicable description string from the TLS Alerts registry.
+         applicable description string from the "TLS Alerts" registry.
          See [RFC8446].
 
    Recommended HTTP Status Code:  502
@@ -1042,8 +1042,6 @@ Table of Contents
    Status:  permanent
 
    Specification document(s):  RFC 9209
-
-   Comments:
 
 4.  Security Considerations
 
