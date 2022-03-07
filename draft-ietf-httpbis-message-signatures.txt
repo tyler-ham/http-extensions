@@ -5,10 +5,10 @@
 HTTP                                                     A. Backman, Ed.
 Internet-Draft                                                    Amazon
 Intended status: Standards Track                               J. Richer
-Expires: 4 September 2022                            Bespoke Engineering
+Expires: 8 September 2022                            Bespoke Engineering
                                                                M. Sporny
                                                           Digital Bazaar
-                                                            3 March 2022
+                                                            7 March 2022
 
 
                         HTTP Message Signatures
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2022.
+   This Internet-Draft will expire on 8 September 2022.
 
 Copyright Notice
 
@@ -147,6 +147,7 @@ Table of Contents
      7.19. Non-deterministic Signature Primitives
      7.20. Choosing Signature Parameters and Derived Components over
             HTTP Fields
+     7.21. Semantically Equivalent Field Values
    8.  Privacy Considerations
      8.1.  Identification through Keys
      8.2.  Signatures do not provide confidentiality
@@ -545,6 +546,12 @@ Table of Contents
 
    The resulting string is the canonicalized component value.
 
+   Note that some HTTP fields have values with multiple valid
+   serializations that have equivalent semantics.  Applications signing
+   and processing such fields MUST consider how to handle the values of
+   such fields to ensure that the signer and verifier can derive the
+   same value, as discussed in Section 7.21.
+
    Following are non-normative examples of canonicalized values for
    header fields, given the following example HTTP message fragment:
 
@@ -587,6 +594,16 @@ Table of Contents
    Note: these are shown here using the line wrapping algorithm in
    [RFC8792] due to limitations in the document format that strips
    trailing spaces from diagrams.
+
+   Any HTTP field component identifiers MAY have the following
+   parameters in specific circumstances.
+
+   sf  A boolean flag indicating that the field value is to be
+      canonicalized using strict encoding of the structured field value.
+      Section 2.1.1
+
+   key  A string parameter used to select a single member value from a
+      dictionary structured field.  Section 2.1.2
 
 2.1.1.  Canonicalized Structured HTTP Fields
 
@@ -2752,6 +2769,46 @@ Table of Contents
       different HTTP versions, applications should always use the
       "@authority" derived component.
 
+7.21.  Semantically Equivalent Field Values
+
+   The signature base generation algorithm (Section 2.3) uses the value
+   of an HTTP field as its component value.  In the common case, this
+   amounts to taking the actual bytes of the field value as the
+   component value for both the signer and verifier.  However, some
+   field values allow for transformation of the values in semantically
+   equivalent ways that alter the bytes used in the value itself.  For
+   example, a field definition can declare some or all of its value to
+   be case-insensitive, or to have special handling of internal
+   whitespace characters.  Other fields have expected transformations
+   from intermediaries, such as the removal of comments in the Via
+   header field.  In such cases, a verifier could be tripped up by using
+   the equivalent transformed field value, which would differ from the
+   byte value used by the signer.  The verifier would have have a
+   difficult time finding this class of errors since the value of the
+   field is still acceptable for the application, but the actual bytes
+   required by the signature base would not match.
+
+   When processing such fields, the signer and verifier have to agree
+   how to handle such transformations, if at all.  One option is to not
+   sign problematic fields, but care must be taken to ensure that there
+   is still sufficient signature coverage (Section 7.4) for the
+   application.  Another option is to define an application-specific
+   canonicalization value for the field before it is added to the HTTP
+   message, such as to always remove internal comments before signing,
+   or to always transform values to lowercase.  Since these
+   transformations are applied prior to the field being used as input to
+   the signature base generation algorithm, the signature base will
+   still simply contain the byte value of the field as it appears within
+   the message.  If the transformations were to be applied after the
+   value is extracted from the message but before it is added to the
+   signature base, different attack surfaces such as value substitution
+   attacks could be launched against the application.  All application-
+   specific additional rules are outside the scope of this
+   specification, and by their very nature these transformations would
+   harm interoperability of the implementation outside of this specific
+   application.  It is recommended that applications avoid the use of
+   such additional rules wherever possible.
+
 8.  Privacy Considerations
 
 8.1.  Identification through Keys
@@ -3502,8 +3559,13 @@ Document History
 
          o  Removed "host" and "date" from most examples.
 
+         o  Fixed query component generation.
+
          o  Renamed "signature input" and "signature input string" to
             "signature base".
+
+         o  Added consideration for semantically equivalent field
+            values.
 
       -  -08
 
