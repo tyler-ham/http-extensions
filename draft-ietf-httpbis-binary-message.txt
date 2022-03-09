@@ -785,8 +785,8 @@ Table of Contents
 
 Acknowledgments
 
-   Julian Reschke, Lucas Pardue and Tommy Pauly provided excellent
-   feedback on both the design and its documentation.
+   Julian Reschke, David Schinazi, Lucas Pardue and Tommy Pauly provided
+   excellent feedback on both the design and its documentation.
 
 Authors' Addresses
 
