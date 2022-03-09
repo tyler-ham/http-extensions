@@ -1325,18 +1325,21 @@ Known-Length Informational Response {
 control data that is formatted according to the value of the framing indicator,
 a header section with a length prefix, binary content with a length prefix, and
 a trailer section with a length prefix.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
-<p id="section-3.1-4">Response messages that contain informational status codes result in a different
+<p id="section-3.1-4">For a known-length encoding, the length prefix on field sections and content is
+a variable-length encoding of an integer.  This integer is the number of bytes
+in the field section or content.<a href="#section-3.1-4" class="pilcrow">¶</a></p>
+<p id="section-3.1-5">Response messages that contain informational status codes result in a different
 structure; see <a href="#informational" class="xref">Section 3.5.1</a>.  Note that while the Known-Length
 Informational Response field is shown in <a href="#format-known-length" class="xref">Figure 1</a>, it can only
-appear in response messages.<a href="#section-3.1-4" class="pilcrow">¶</a></p>
-<p id="section-3.1-5">Fields in the header and trailer sections consist of a length-prefixed name and
-length-prefixed value; see <a href="#fields" class="xref">Section 3.6</a>.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
-<p id="section-3.1-6">The format allows for the message to be truncated before any of the length
+appear in response messages.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
+<p id="section-3.1-6">Fields in the header and trailer sections consist of a length-prefixed name and
+length-prefixed value; see <a href="#fields" class="xref">Section 3.6</a>.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+<p id="section-3.1-7">The format allows for the message to be truncated before any of the length
 prefixes that precede the field sections or content. This reduces the overall
 message size. A message that is truncated at any other point is invalid; see
-<a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
-<p id="section-3.1-7">The variable-length integer encoding means that there is a limit of 2^62-1
-bytes for each field section and the message content.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
+<a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
+<p id="section-3.1-8">The variable-length integer encoding means that there is a limit of 2^62-1
+bytes for each field section and the message content.<a href="#section-3.1-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="indeterminate-length-messages">
@@ -1390,16 +1393,24 @@ control data that is formatted according to the value of the framing indicator,
 a header section that is terminated by a zero value, any number of
 non-zero-length chunks of binary content, a zero value, and a trailer section
 that is terminated by a zero value.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
-<p id="section-3.2-4">Response messages that contain informational status codes result in a different
+<p id="section-3.2-4">The indeterminate-length encoding only uses length prefixes for content blocks.
+Multiple length-prefixed portions of content can be included, each prefixed by a
+non-zero Chunk Length integer describing the number of bytes in the block.  The
+Chunk Length is encoded as a variable-length integer.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
+<p id="section-3.2-5">Each Field Line in an Indeterminate-Length Field Section starts with a Name
+Length field.  An Indeterminate-Length Field Section ends with a Content
+Terminator field.  The zero value of the Content Terminator distinguishes it
+from the Name Length field, which cannot contain a value of 0.<a href="#section-3.2-5" class="pilcrow">¶</a></p>
+<p id="section-3.2-6">Response messages that contain informational status codes result in a different
 structure; see <a href="#informational" class="xref">Section 3.5.1</a>.  Note that while the Indeterminate-Length
 Informational Response field is shown in <a href="#format-indeterminate-length" class="xref">Figure 2</a>, it can only
-appear in response messages.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
-<p id="section-3.2-5">Indeterminate-length messages can be truncated in a similar way as known-length
+appear in response messages.<a href="#section-3.2-6" class="pilcrow">¶</a></p>
+<p id="section-3.2-7">Indeterminate-length messages can be truncated in a similar way as known-length
 messages. Truncation occurs after the control data, or after the Content
 Terminator field that ends a field section or sequence of content chunks. A
-message that is truncated at any other point is invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.2-5" class="pilcrow">¶</a></p>
-<p id="section-3.2-6">Indeterminate-length messages use the same encoding for field lines as
-known-length messages; see <a href="#fields" class="xref">Section 3.6</a>.<a href="#section-3.2-6" class="pilcrow">¶</a></p>
+message that is truncated at any other point is invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
+<p id="section-3.2-8">Indeterminate-length messages use the same encoding for field lines as
+known-length messages; see <a href="#fields" class="xref">Section 3.6</a>.<a href="#section-3.2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="framing">
