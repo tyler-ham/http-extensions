@@ -1153,7 +1153,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
                 <p id="section-toc.1-1.3.2.7.1"><a href="#section-3.7" class="xref">3.7</a>.  <a href="#name-content" class="xref">Content</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.8">
-                <p id="section-toc.1-1.3.2.8.1"><a href="#section-3.8" class="xref">3.8</a>.  <a href="#name-padding" class="xref">Padding</a></p>
+                <p id="section-toc.1-1.3.2.8.1"><a href="#section-3.8" class="xref">3.8</a>.  <a href="#name-padding-and-truncation" class="xref">Padding and Truncation</a></p>
 </li>
             </ul>
 </li>
@@ -1335,9 +1335,7 @@ appear in response messages.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 <p id="section-3.1-6">Fields in the header and trailer sections consist of a length-prefixed name and
 length-prefixed value; see <a href="#fields" class="xref">Section 3.6</a>.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 <p id="section-3.1-7">The format allows for the message to be truncated before any of the length
-prefixes that precede the field sections or content. This reduces the overall
-message size. A message that is truncated at any other point is invalid; see
-<a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
+prefixes that precede the field sections or content; see <a href="#padding" class="xref">Section 3.8</a>.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.1-8">The variable-length integer encoding means that there is a limit of 2^62-1
 bytes for each field section and the message content.<a href="#section-3.1-8" class="pilcrow">¶</a></p>
 </section>
@@ -1406,9 +1404,7 @@ structure; see <a href="#informational" class="xref">Section 3.5.1</a>.  Note th
 Informational Response field is shown in <a href="#format-indeterminate-length" class="xref">Figure 2</a>, it can only
 appear in response messages.<a href="#section-3.2-6" class="pilcrow">¶</a></p>
 <p id="section-3.2-7">Indeterminate-length messages can be truncated in a similar way as known-length
-messages. Truncation occurs after the control data, or after the Content
-Terminator field that ends a field section or sequence of content chunks. A
-message that is truncated at any other point is invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
+messages; see <a href="#padding" class="xref">Section 3.8</a>.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
 <p id="section-3.2-8">Indeterminate-length messages use the same encoding for field lines as
 known-length messages; see <a href="#fields" class="xref">Section 3.6</a>.<a href="#section-3.2-8" class="pilcrow">¶</a></p>
 </section>
@@ -1581,21 +1577,27 @@ comma; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpb
 known-length message has a limit, this limit is large enough that it is
 unlikely to be a practical limitation. There is no limit to the size of content
 in an indeterminate length message.<a href="#section-3.7-1" class="pilcrow">¶</a></p>
-<p id="section-3.7-2">Omitting content by truncating a message is only possible if the content is
-zero-length.<a href="#section-3.7-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="padding">
 <section id="section-3.8">
-        <h3 id="name-padding">
-<a href="#section-3.8" class="section-number selfRef">3.8. </a><a href="#name-padding" class="section-name selfRef">Padding</a>
+        <h3 id="name-padding-and-truncation">
+<a href="#section-3.8" class="section-number selfRef">3.8. </a><a href="#name-padding-and-truncation" class="section-name selfRef">Padding and Truncation</a>
         </h3>
 <p id="section-3.8-1">Messages can be padded with any number of zero-valued bytes.  Non-zero padding
 bytes cause a message to be invalid (see <a href="#invalid" class="xref">Section 4</a>). Unlike other parts of a
 message, a processor <span class="bcp14">MAY</span> decide not to validate the value of padding bytes.<a href="#section-3.8-1" class="pilcrow">¶</a></p>
-<p id="section-3.8-2">Padding is compatible with truncation of empty parts of the messages.
+<p id="section-3.8-2">Truncation can be used to reduce the size of messages that have no data in
+trailing field sections or content.  If the trailers of a message is empty, it
+<span class="bcp14">MAY</span> be omitted by the encoder in place of adding a length field equal to
+zero. An encoder <span class="bcp14">MAY</span> omit empty content in the same way if the trailers are also
+empty.  A message that is truncated at any other point is invalid; see
+<a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.8-2" class="pilcrow">¶</a></p>
+<p id="section-3.8-3">Decoders <span class="bcp14">MUST</span> treat missing truncated fields as equivalent to having been sent
+with the length field sent to zero.<a href="#section-3.8-3" class="pilcrow">¶</a></p>
+<p id="section-3.8-4">Padding is compatible with truncation of empty parts of the messages.
 Zero-valued bytes will be interpreted as zero-length part, which is semantically
-equivalent to the part being absent.<a href="#section-3.8-2" class="pilcrow">¶</a></p>
+equivalent to the part being absent.<a href="#section-3.8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
