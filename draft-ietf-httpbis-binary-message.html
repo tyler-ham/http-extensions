@@ -1853,9 +1853,10 @@ same framing as all other messages<a href="#section-6-3.6" class="pilcrow">¶</a
 <p id="section-6-5">Unlike HTTP/2 and HTTP/3, this format uses a a fixed format for control data
 rather than using pseudo-fields.  Messages are invalid (<a href="#invalid" class="xref">Section 4</a>) if they
 contain fields named <code>:method</code>, <code>:scheme</code>, <code>:authority</code>, <code>:path</code>, or <code>:status</code>.
-Other pseudo-fields that are defined by protocol extensions <span class="bcp14">MAY</span> be included.
-Field lines containing pseudo-fields <span class="bcp14">MUST</span> precede other field lines.  A message
-that contains a pseudo-field after any other field is invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-6-5" class="pilcrow">¶</a></p>
+Other pseudo-fields that are defined by protocol extensions <span class="bcp14">MAY</span> be included;
+pseudo-fields cannot be included in trailers (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-07#section-8.1" class="relref">Section 8.1</a> of [<a href="#H2" class="xref">H2</a>]</span>).  Field
+lines containing pseudo-fields <span class="bcp14">MUST</span> precede other field lines.  A message that
+contains a pseudo-field after any other field is invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-6-5" class="pilcrow">¶</a></p>
 <p id="section-6-6">Note that while some messages - CONNECT or upgrade requests in particular - can
 be represented using this format, doing so serves no purpose as these requests
 are used to affect protocol behavior, which this format cannot do without

@@ -635,9 +635,10 @@ Table of Contents
    control data rather than using pseudo-fields.  Messages are invalid
    (Section 4) if they contain fields named :method, :scheme,
    :authority, :path, or :status.  Other pseudo-fields that are defined
-   by protocol extensions MAY be included.  Field lines containing
-   pseudo-fields MUST precede other field lines.  A message that
-   contains a pseudo-field after any other field is invalid; see
+   by protocol extensions MAY be included; pseudo-fields cannot be
+   included in trailers (see Section 8.1 of [H2]).  Field lines
+   containing pseudo-fields MUST precede other field lines.  A message
+   that contains a pseudo-field after any other field is invalid; see
    Section 4.
 
    Note that while some messages - CONNECT or upgrade requests in
