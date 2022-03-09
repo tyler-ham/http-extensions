@@ -202,7 +202,9 @@ Table of Contents
    prefix.
 
    Response messages that contain informational status codes result in a
-   different structure; see Section 3.5.1.
+   different structure; see Section 3.5.1.  Note that while the Known-
+   Length Informational Response field is shown in Figure 1, it can only
+   appear in response messages.
 
    Fields in the header and trailer sections consist of a length-
    prefixed name and length-prefixed value; see Section 3.6.
@@ -259,7 +261,9 @@ Table of Contents
    value, and a trailer section that is terminated by a zero value.
 
    Response messages that contain informational status codes result in a
-   different structure; see Section 3.5.1.
+   different structure; see Section 3.5.1.  Note that while the
+   Indeterminate-Length Informational Response field is shown in
+   Figure 2, it can only appear in response messages.
 
    Indeterminate-length messages can be truncated in a similar way as
    known-length messages.  Truncation occurs after the control data, or
