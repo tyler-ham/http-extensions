@@ -1830,7 +1830,8 @@ features of the formats used in those protocols:<a href="#section-6-2" class="pi
         <li class="normal" id="section-6-3.5">header compression (<span>[<a href="#HPACK" class="xref">HPACK</a>]</span>, <span>[<a href="#QPACK" class="xref">QPACK</a>]</span>)<a href="#section-6-3.5" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-6-3.6">framing of responses that depends on the corresponding request (such as HEAD)
-or the value of the status code (such as 204 or 304)<a href="#section-6-3.6" class="pilcrow">¶</a>
+or the value of the status code (such as 204 or 304); these responses use the
+same framing as all other messages<a href="#section-6-3.6" class="pilcrow">¶</a>
 </li>
       </ul>
 <p id="section-6-4">Some of these features are also absent in HTTP/2 and HTTP/3.<a href="#section-6-4" class="pilcrow">¶</a></p>
