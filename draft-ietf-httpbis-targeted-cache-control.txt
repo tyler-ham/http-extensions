@@ -5,10 +5,10 @@
 HTTP                                                            S. Ludin
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                           M. Nottingham
-Expires: 10 September 2022                                        Fastly
+Expires: 11 September 2022                                        Fastly
                                                                    Y. Wu
                                                               Cloudflare
-                                                            9 March 2022
+                                                           10 March 2022
 
 
                       Targeted HTTP Cache Control
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 September 2022.
+   This Internet-Draft will expire on 11 September 2022.
 
 Copyright Notice
 
@@ -90,9 +90,8 @@ Table of Contents
    Modern deployments of HTTP often use multiple layers of caching.  For
    example, a website might use a cache on the origin server itself; it
    might deploy a caching layer in the same network as the origin
-   server, it might use one or more content delivery networks (CDNs)
-   that are distributed throughout the Internet, and it might benefit
-   from browser caching as well.
+   server, it might use one or more CDNs that are distributed throughout
+   the Internet, and it might benefit from browser caching as well.
 
    Because it is often desirable to control these different classes of
    caches separately, some means of targeting cache directives at them
@@ -174,8 +173,7 @@ Table of Contents
    Implementations MUST NOT generate values that violate these inferred
    constraints on the cache directive's value.  In particular, string
    values whose first character is not alphabetic or "*" MUST be
-   generated as structured Strings so that they are not mistaken for
-   other types.
+   generated as Strings so that they are not mistaken for other types.
 
    Implementations SHOULD NOT consume values that violate these inferred
    constraints.  For example, a consuming implementation that coerces a
@@ -308,8 +306,7 @@ Table of Contents
    caches that might handle the response.
 
    It applies to caches that are part of a distributed network that
-   operate on behalf of an origin server (commonly called a content
-   delivery network or CDN).
+   operate on behalf of an origin server (commonly called a CDN).
 
    CDN caches that use CDN-Cache-Control will typically forward this
    header so that downstream CDN caches can use it as well.  However,
