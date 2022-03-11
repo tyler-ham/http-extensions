@@ -5,10 +5,10 @@
 HTTP                                                            S. Ludin
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                           M. Nottingham
-Expires: 11 September 2022                                        Fastly
+Expires: 12 September 2022                                        Fastly
                                                                    Y. Wu
                                                               Cloudflare
-                                                           10 March 2022
+                                                           11 March 2022
 
 
                       Targeted HTTP Cache Control
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 September 2022.
+   This Internet-Draft will expire on 12 September 2022.
 
 Copyright Notice
 
@@ -136,8 +136,7 @@ Table of Contents
 
    CDN-Cache-Control: max-age=60
 
-   is a targeted field that applies to content delivery networks (CDNs),
-   as defined in Section 3.
+   is a targeted field that applies to CDNs, as defined in Section 3.
 
 2.1.  Syntax
 
@@ -218,7 +217,7 @@ Table of Contents
    [HTTP-CACHING].
 
    Targeted fields that are not on a cache's target list MUST NOT change
-   that cache's behavior, and MUST be passed through.
+   that cache's behavior and MUST be passed through.
 
    Caches that use a targeted field MUST implement the semantics of the
    following cache directives:
