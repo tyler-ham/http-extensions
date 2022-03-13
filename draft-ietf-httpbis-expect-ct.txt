@@ -4,8 +4,8 @@
 
 HTTP                                                            E. Stark
 Internet-Draft                                                    Google
-Intended status: Experimental                              11 March 2022
-Expires: 12 September 2022
+Intended status: Experimental                              13 March 2022
+Expires: 14 September 2022
 
 
                       Expect-CT Extension for HTTP
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 September 2022.
+   This Internet-Draft will expire on 14 September 2022.
 
 Copyright Notice
 

@@ -5,10 +5,10 @@
 HTTP                                                            S. Ludin
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                           M. Nottingham
-Expires: 12 September 2022                                        Fastly
+Expires: 14 September 2022                                        Fastly
                                                                    Y. Wu
                                                               Cloudflare
-                                                           11 March 2022
+                                                           13 March 2022
 
 
                       Targeted HTTP Cache Control
@@ -18,8 +18,9 @@ Abstract
 
    This specification defines a convention for HTTP response header
    fields that allow cache directives to be targeted at specific caches
-   or classes of caches.  It also defines one such header field,
-   targeted at content delivery network (CDN) caches.
+   or classes of caches.  It also defines one such header field, the
+   CDN-Cache-Control response header field, which is targeted at content
+   delivery network (CDN) caches.
 
 About This Document
 
@@ -51,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 September 2022.
+   This Internet-Draft will expire on 14 September 2022.
 
 Copyright Notice
 
@@ -190,9 +191,9 @@ Table of Contents
 
 2.2.  Cache Behavior
 
-   A cache that implements this specification maintains a _target list_
-   - an ordered list of the targeted field names that it uses for
-   caching policy, with the order reflecting priority from most
+   A cache that implements this specification maintains a target list.
+   A target list is an ordered list of the targeted field names that it
+   uses for caching policy, with the order reflecting priority from most
    applicable to least.  The target list might be fixed, user
    configurable, or generated per request, depending upon the
    implementation.

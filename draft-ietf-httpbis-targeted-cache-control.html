@@ -9,7 +9,7 @@
 <meta content="Mark Nottingham" name="author">
 <meta content="Yuchen Wu" name="author">
 <meta content="
-       This specification defines a convention for HTTP response header fields that allow cache directives to be targeted at specific caches or classes of caches. It also defines one such header field, targeted at content delivery network (CDN) caches. 
+       This specification defines a convention for HTTP response header fields that allow cache directives to be targeted at specific caches or classes of caches. It also defines one such header field, the CDN-Cache-Control response header field, which is targeted at content delivery network (CDN) caches. 
     " name="description">
 <meta content="xml2rfc 3.12.3" name="generator">
 <meta content="CDN" name="keyword">
@@ -1021,7 +1021,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Ludin, et al.</td>
-<td class="center">Expires 12 September 2022</td>
+<td class="center">Expires 14 September 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1034,12 +1034,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dd class="internet-draft">draft-ietf-httpbis-targeted-cache-control</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-03-11" class="published">11 March 2022</time>
+<time datetime="2022-03-13" class="published">13 March 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-09-12">12 September 2022</time></dd>
+<dd class="expires"><time datetime="2022-09-14">14 September 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1060,7 +1060,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <h1 id="title">Targeted HTTP Cache Control</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This specification defines a convention for HTTP response header fields that allow cache directives to be targeted at specific caches or classes of caches. It also defines one such header field, targeted at content delivery network (CDN) caches.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This specification defines a convention for HTTP response header fields that allow cache directives to be targeted at specific caches or classes of caches. It also defines one such header field, the CDN-Cache-Control response header field, which is targeted at content delivery network (CDN) caches.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1096,7 +1096,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 14 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1237,7 +1237,7 @@ CDN-Cache-Control: max-age=60
         <h3 id="name-cache-behavior">
 <a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-cache-behavior" class="section-name selfRef">Cache Behavior</a>
         </h3>
-<p id="section-2.2-1">A cache that implements this specification maintains a <em>target list</em> - an ordered list of the targeted field names that it uses for caching policy, with the order reflecting priority from most applicable to least. The target list might be fixed, user configurable, or generated per request, depending upon the implementation.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2-1">A cache that implements this specification maintains a target list. A target list is an ordered list of the targeted field names that it uses for caching policy, with the order reflecting priority from most applicable to least. The target list might be fixed, user configurable, or generated per request, depending upon the implementation.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
 <p id="section-2.2-2">For example, a CDN cache might support both CDN-Cache-Control and a header specific to that CDN, ExampleCDN-Cache-Control, with the latter overriding the former. Its target list would be:<a href="#section-2.2-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2-3">
 <pre>
