@@ -9,9 +9,9 @@
 <meta content="Lucas Pardue" name="author">
 <meta content="
        This document defines HTTP fields that support integrity digests. The
-Representation-Digest field can be used for the integrity of HTTP
+Repr-Digest field can be used for the integrity of HTTP
 representations. The Content-Digest field can be used for the integrity of
-HTTP message content. Want-Representation-Digest and Want-Content-Digest can be
+HTTP message content. Want-Repr-Digest and Want-Content-Digest can be
 used to indicate a sender's interest and preferences for receiving the respective
 Integrity fields. 
        This document obsoletes RFC 3230 and the Digest and Want-Digest HTTP
@@ -1025,7 +1025,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Polli &amp; Pardue</td>
-<td class="center">Expires 14 September 2022</td>
+<td class="center">Expires 15 September 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1041,12 +1041,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <a href="https://www.rfc-editor.org/rfc/rfc3230" class="eref">3230</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-03-13" class="published">13 March 2022</time>
+<time datetime="2022-03-14" class="published">14 March 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-09-14">14 September 2022</time></dd>
+<dd class="expires"><time datetime="2022-09-15">15 September 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1064,9 +1064,9 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">This document defines HTTP fields that support integrity digests. The
-Representation-Digest field can be used for the integrity of HTTP
+Repr-Digest field can be used for the integrity of HTTP
 representations. The Content-Digest field can be used for the integrity of
-HTTP message content. Want-Representation-Digest and Want-Content-Digest can be
+HTTP message content. Want-Repr-Digest and Want-Content-Digest can be
 used to indicate a sender's interest and preferences for receiving the respective
 Integrity fields.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">This document obsoletes RFC 3230 and the Digest and Want-Digest HTTP
@@ -1106,7 +1106,7 @@ fields.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 14 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 15 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1153,13 +1153,13 @@ fields.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-the-representation-digest-f" class="xref">The Representation-Digest Field</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-the-repr-digest-field" class="xref">The Repr-Digest Field</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
-                <p id="section-toc.1-1.2.2.1.1"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-using-representation-digest" class="xref">Using Representation-Digest in State-Changing Requests</a></p>
+                <p id="section-toc.1-1.2.2.1.1"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-using-repr-digest-in-state-" class="xref">Using Repr-Digest in State-Changing Requests</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2">
-                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="xref">2.2</a>.  <a href="#name-representation-digest-and-c" class="xref">Representation-Digest and Content-Location in Responses</a></p>
+                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="xref">2.2</a>.  <a href="#name-repr-digest-and-content-loc" class="xref">Repr-Digest and Content-Location in Responses</a></p>
 </li>
             </ul>
 </li>
@@ -1262,7 +1262,7 @@ fields.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-C" class="xref">Appendix C</a>.  <a href="#name-examples-of-want-representa" class="xref">Examples of Want-Representation-Digest Solicited Digest</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#appendix-C" class="xref">Appendix C</a>.  <a href="#name-examples-of-want-repr-diges" class="xref">Examples of Want-Repr-Digest Solicited Digest</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.1">
                 <p id="section-toc.1-1.11.2.1.1"><a href="#appendix-C.1" class="xref">C.1</a>.  <a href="#name-server-selects-clients-leas" class="xref">Server Selects Client's Least Preferred Algorithm</a></p>
@@ -1345,13 +1345,13 @@ fields; see <a href="#obsolete-3230" class="xref">Section 1.3</a>.<a href="#sect
 <p id="section-1.1-1">This document is structured as follows:<a href="#section-1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.1-2.1">
-            <a href="#representation-digest" class="xref">Section 2</a> defines the Representation-Digest request and response header and trailer field,<a href="#section-1.1-2.1" class="pilcrow">¶</a>
+            <a href="#representation-digest" class="xref">Section 2</a> defines the Repr-Digest request and response header and trailer field,<a href="#section-1.1-2.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-2.2">
             <a href="#content-digest" class="xref">Section 3</a> defines the Content-Digest request and response header and trailer field,<a href="#section-1.1-2.2" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-2.3">
-            <a href="#want-fields" class="xref">Section 4</a> defines the Want-Representation-Digest and Want-Content-Digest request and response header and
+            <a href="#want-fields" class="xref">Section 4</a> defines the Want-Repr-Digest and Want-Content-Digest request and response header and
 trailer field,<a href="#section-1.1-2.3" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-2.4">
@@ -1362,7 +1362,7 @@ trailer field,<a href="#section-1.1-2.3" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-2.6">
             <a href="#examples-unsolicited" class="xref">Appendix B</a> and <a href="#examples-solicited" class="xref">Appendix C</a> provide examples of using
-Representation-Digest and Want-Representation-Digest.<a href="#section-1.1-2.6" class="pilcrow">¶</a>
+Repr-Digest and Want-Repr-Digest.<a href="#section-1.1-2.6" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>
@@ -1381,10 +1381,10 @@ algorithms are registered in the "Hash Algorithms for HTTP Digest Fields" (see
 <p id="section-1.2-2">Selecting the data on which digests are calculated depends on the use case of
 HTTP messages. This document provides different headers for HTTP representation
 data and HTTP content.<a href="#section-1.2-2" class="pilcrow">¶</a></p>
-<p id="section-1.2-3">This document defines the <code>Representation-Digest</code> request and response header
+<p id="section-1.2-3">This document defines the <code>Repr-Digest</code> request and response header
 and trailer field (<a href="#representation-digest" class="xref">Section 2</a>) that contains a digest value
 computed by applying a hashing algorithm to "selected representation data"
-(<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-3.2" class="relref">Section 3.2</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>). Basing <code>Representation-Digest</code> on the selected
+(<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-3.2" class="relref">Section 3.2</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>). Basing <code>Repr-Digest</code> on the selected
 representation makes it straightforward to apply it to use-cases where the
 transferred data requires some sort of manipulation to be considered a
 representation or conveys a partial representation of a resource, such as Range
@@ -1393,13 +1393,13 @@ Requests (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-ht
 required. The <code>Content-Digest</code> request and response header and trailer field is
 defined to support digests of content (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-3.2" class="relref">Section 3.2</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>); see
 <a href="#content-digest" class="xref">Section 3</a>.<a href="#section-1.2-4" class="pilcrow">¶</a></p>
-<p id="section-1.2-5"><code>Representation-Digest</code> and <code>Content-Digest</code> support hashing algorithm agility.
-The <code>Want-Representation-Digest</code> and <code>Want-Content-Digest</code> fields allows
-endpoints to express interest in <code>Representation-Digest</code> and <code>Content-Digest</code>
+<p id="section-1.2-5"><code>Repr-Digest</code> and <code>Content-Digest</code> support hashing algorithm agility.
+The <code>Want-Repr-Digest</code> and <code>Want-Content-Digest</code> fields allows
+endpoints to express interest in <code>Repr-Digest</code> and <code>Content-Digest</code>
 respectively, and preference of algorithms in either.<a href="#section-1.2-5" class="pilcrow">¶</a></p>
-<p id="section-1.2-6"><code>Representation-Digest</code> and <code>Content-Digest</code> are collectively termed
+<p id="section-1.2-6"><code>Repr-Digest</code> and <code>Content-Digest</code> are collectively termed
 Integrity fields.
-<code>Want-Representation-Digest</code> and <code>Want-Content-Digest</code>are
+<code>Want-Repr-Digest</code> and <code>Want-Content-Digest</code>are
 collectively termed Integrity preference fields.<a href="#section-1.2-6" class="pilcrow">¶</a></p>
 <p id="section-1.2-7">Integrity fields are tied to the <code>Content-Encoding</code>
 and <code>Content-Type</code> header fields. Therefore, a given resource may have multiple
@@ -1446,7 +1446,7 @@ described in BCP 14 <span>[<a href="#RFC2119" class="xref">RFC2119</a>]</span> 
 appear in all capitals, as shown here.<a href="#section-1.4-1" class="pilcrow">¶</a></p>
 <p id="section-1.4-2">This document uses the Augmented BNF defined in <span>[<a href="#RFC5234" class="xref">RFC5234</a>]</span> and updated by
 <span>[<a href="#RFC7405" class="xref">RFC7405</a>]</span>.<a href="#section-1.4-2" class="pilcrow">¶</a></p>
-<p id="section-1.4-3">This document uses the Boolean, Byte Sequence, 
+<p id="section-1.4-3">This document uses the Boolean, Byte Sequence,
 Dictionary, Integer and List types from
 <span>[<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span> along with
 the sf-dictionary and sf-list ABNF rules.<a href="#section-1.4-3" class="pilcrow">¶</a></p>
@@ -1458,18 +1458,18 @@ whereas hashing algorithm keys are quoted (e.g. "sha", "crc32c").<a href="#secti
 <p id="section-1.4-6">The term "checksum" describes the output of the application of an algorithm
 to a sequence of bytes,
 whereas "digest" is only used in relation to the value contained in the fields.<a href="#section-1.4-6" class="pilcrow">¶</a></p>
-<p id="section-1.4-7">Integrity fields: collective term for <code>Representation-Digest</code> and <code>Content-Digest</code><a href="#section-1.4-7" class="pilcrow">¶</a></p>
-<p id="section-1.4-8">Integrity preference fields: collective term for <code>Want-Representation-Digest</code> and <code>Want-Content-Digest</code><a href="#section-1.4-8" class="pilcrow">¶</a></p>
+<p id="section-1.4-7">Integrity fields: collective term for <code>Repr-Digest</code> and <code>Content-Digest</code><a href="#section-1.4-7" class="pilcrow">¶</a></p>
+<p id="section-1.4-8">Integrity preference fields: collective term for <code>Want-Repr-Digest</code> and <code>Want-Content-Digest</code><a href="#section-1.4-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="representation-digest">
 <section id="section-2">
-      <h2 id="name-the-representation-digest-f">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-the-representation-digest-f" class="section-name selfRef">The Representation-Digest Field</a>
+      <h2 id="name-the-repr-digest-field">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-the-repr-digest-field" class="section-name selfRef">The Repr-Digest Field</a>
       </h2>
-<p id="section-2-1">The <code>Representation-Digest</code> HTTP field can be used in requests and responses to
+<p id="section-2-1">The <code>Repr-Digest</code> HTTP field can be used in requests and responses to
 communicate digests that are calculated using a hashing algorithm applied to
 the entire "selected representation data" (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-8.1" class="relref">Section 8.1</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>).<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">Representations take into account the effect of the HTTP semantics on
@@ -1481,7 +1481,7 @@ several examples are provided in <a href="#resource-representation" class="xref"
 <p id="section-2-3">When a message has no "representation data" it is still possible to assert that no
 "representation data" was sent by computing the digest on an empty
 string (see <a href="#usage-in-signatures" class="xref">Section 6.3</a>).<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4"><code>Representation-Digest</code> is a Structured Fields <code>Dictionary</code> (see <span><a href="https://rfc-editor.org/rfc/rfc8941#section-3.2" class="relref">Section 3.2</a> of [<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>) where:<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-4"><code>Repr-Digest</code> is a Structured Fields <code>Dictionary</code> (see <span><a href="https://rfc-editor.org/rfc/rfc8941#section-3.2" class="relref">Section 3.2</a> of [<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>) where:<a href="#section-2-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-5.1">keys convey the hashing algorithm (see <a href="#algorithms" class="xref">Section 5</a>)
 used to compute the digest;<a href="#section-2-5.1" class="pilcrow">¶</a>
@@ -1492,7 +1492,7 @@ which contain the output of the digest calculation.<a href="#section-2-5.2" clas
       </ul>
 <div id="section-2-6">
 <pre class="lang-abnf sourcecode">
-Representation-Digest   = sf-dictionary
+Repr-Digest   = sf-dictionary
 </pre><a href="#section-2-6" class="pilcrow">¶</a>
 </div>
 <p id="section-2-7">For example:<a href="#section-2-7" class="pilcrow">¶</a></p>
@@ -1500,7 +1500,7 @@ Representation-Digest   = sf-dictionary
 <pre class="lang-http-message sourcecode">
 NOTE: '\' line wrapping per RFC 8792
 
-Representation-Digest: \
+Repr-Digest: \
   sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX+TaPm+AbwAgBWnrI\
   iYllu7BNNyealdVLvRwEmTHWXvJwew==:
 </pre><a href="#section-2-8" class="pilcrow">¶</a>
@@ -1513,7 +1513,7 @@ support transitions away from weaker algorithms (see <a href="#sec-agility" clas
 <pre class="lang-http-message sourcecode">
 NOTE: '\' line wrapping per RFC 8792
 
-Representation-Digest: \
+Repr-Digest: \
   sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:,\
   sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX+TaPm+AbwAgBWnrI\
   iYllu7BNNyealdVLvRwEmTHWXvJwew==:
@@ -1525,13 +1525,13 @@ validation instead of verifying every digest.<a href="#section-2-11" class="pilc
 <p id="section-2-12">A sender <span class="bcp14">MAY</span> send a digest without knowing whether the
 recipient supports a given hashing algorithm, or even knowing that the recipient
 will ignore it.<a href="#section-2-12" class="pilcrow">¶</a></p>
-<p id="section-2-13"><code>Representation-Digest</code> can be sent in a trailer section.
+<p id="section-2-13"><code>Repr-Digest</code> can be sent in a trailer section.
 In this case,
-<code>Representation-Digest</code> <span class="bcp14">MAY</span> be merged into the header section; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-6.5.1" class="relref">Section 6.5.1</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>.<a href="#section-2-13" class="pilcrow">¶</a></p>
+<code>Repr-Digest</code> <span class="bcp14">MAY</span> be merged into the header section; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-6.5.1" class="relref">Section 6.5.1</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>.<a href="#section-2-13" class="pilcrow">¶</a></p>
 <div id="state-changing-requests">
 <section id="section-2.1">
-        <h3 id="name-using-representation-digest">
-<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-using-representation-digest" class="section-name selfRef">Using Representation-Digest in State-Changing Requests</a>
+        <h3 id="name-using-repr-digest-in-state-">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-using-repr-digest-in-state-" class="section-name selfRef">Using Repr-Digest in State-Changing Requests</a>
         </h3>
 <p id="section-2.1-1">When the representation enclosed in a state-changing request
 does not describe the target resource,
@@ -1542,18 +1542,18 @@ representation metadata (see <a href="#representation-digest" class="xref">Secti
 <p id="section-2.1-2">In responses,<a href="#section-2.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.1-3.1">if the representation describes the status of the request,
-<code>Representation-Digest</code> <span class="bcp14">MUST</span> be computed on the enclosed representation
+<code>Repr-Digest</code> <span class="bcp14">MUST</span> be computed on the enclosed representation
  (see <a href="#post-referencing-status" class="xref">Appendix B.8</a> );<a href="#section-2.1-3.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-2.1-3.2">if there is a referenced resource
-<code>Representation-Digest</code> <span class="bcp14">MUST</span> be computed on the selected representation of the referenced resource
+<code>Repr-Digest</code> <span class="bcp14">MUST</span> be computed on the selected representation of the referenced resource
  even if that is different from the target resource.
- That might or might not result in computing <code>Representation-Digest</code> on the enclosed representation.<a href="#section-2.1-3.2" class="pilcrow">¶</a>
+ That might or might not result in computing <code>Repr-Digest</code> on the enclosed representation.<a href="#section-2.1-3.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-2.1-4">The latter case is done according to the HTTP semantics of the given
 method, for example using the <code>Content-Location</code> header field (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-8.7" class="relref">Section 8.7</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>).
-In contrast, the <code>Location</code> header field does not affect <code>Representation-Digest</code> because
+In contrast, the <code>Location</code> header field does not affect <code>Repr-Digest</code> because
 it is not representation metadata.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
 <p id="section-2.1-5">For example, in <code>PATCH</code> requests, the representation digest
 will be computed on the patch document
@@ -1565,12 +1565,12 @@ representation of the patched resource.<a href="#section-2.1-5" class="pilcrow">
 </div>
 <div id="digest-and-content-location">
 <section id="section-2.2">
-        <h3 id="name-representation-digest-and-c">
-<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-representation-digest-and-c" class="section-name selfRef">Representation-Digest and Content-Location in Responses</a>
+        <h3 id="name-repr-digest-and-content-loc">
+<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-repr-digest-and-content-loc" class="section-name selfRef">Repr-Digest and Content-Location in Responses</a>
         </h3>
 <p id="section-2.2-1">When a state-changing method returns the <code>Content-Location</code> header field, the
 enclosed representation refers to the resource identified by its value and
-<code>Representation-Digest</code> is computed accordingly.
+<code>Repr-Digest</code> is computed accordingly.
 An example is given in <a href="#post-not-request-uri" class="xref">Appendix B.7</a>.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1617,7 +1617,7 @@ support transitions away from weaker algorithms (see <a href="#sec-agility" clas
 <pre class="lang-http-message sourcecode">
 NOTE: '\' line wrapping per RFC 8792
 
-Representation-Digest: \
+Repr-Digest: \
   sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:,\
   sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX+TaPm+AbwAgBWnrI\
   iYllu7BNNyealdVLvRwEmTHWXvJwew==:
@@ -1641,15 +1641,15 @@ In this case,
       </h2>
 <p id="section-4-1">Senders can indicate their interest in Integrity fields and hashing algorithm
 preferences using the
-<code>Want-Representation-Digest</code> or <code>Want-Content-Digest</code> fields. These can be used in both
+<code>Want-Repr-Digest</code> or <code>Want-Content-Digest</code> fields. These can be used in both
 requests and responses.<a href="#section-4-1" class="pilcrow">¶</a></p>
-<p id="section-4-2"><code>Want-Representation-Digest</code> indicates the sender's desire to receive a representation digest
+<p id="section-4-2"><code>Want-Repr-Digest</code> indicates the sender's desire to receive a representation digest
 on messages associated with the request URI and representation metadata, using
-the <code>Representation-Digest</code> field.<a href="#section-4-2" class="pilcrow">¶</a></p>
+the <code>Repr-Digest</code> field.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3"><code>Want-Content-Digest</code> indicates the sender's desire to receive a content digest
 on messages associated with the request URI and representation metadata, using
 the <code>Content-Digest</code> field.<a href="#section-4-3" class="pilcrow">¶</a></p>
-<p id="section-4-4"><code>Want-Representation-Digest</code> and <code>Want-Content-Digest</code> are Structured Fields
+<p id="section-4-4"><code>Want-Repr-Digest</code> and <code>Want-Content-Digest</code> are Structured Fields
 Dictionary (see <span><a href="https://rfc-editor.org/rfc/rfc8941#section-3.2" class="relref">Section 3.2</a> of [<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>) where:<a href="#section-4-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4-5.1">keys convey the hashing algorithm (see <a href="#algorithms" class="xref">Section 5</a>);<a href="#section-4-5.1" class="pilcrow">¶</a>
@@ -1663,15 +1663,15 @@ Values convey an ascending, relative, weighted preference.<a href="#section-4-5.
       </ul>
 <div id="section-4-6">
 <pre class="lang-abnf sourcecode">
-   Want-Representation-Digest = sf-dictionary
+   Want-Repr-Digest = sf-dictionary
    Want-Content-Digest = sf-dictionary
 </pre><a href="#section-4-6" class="pilcrow">¶</a>
 </div>
 <p id="section-4-7">Examples:<a href="#section-4-7" class="pilcrow">¶</a></p>
 <div id="section-4-8">
 <pre class="lang-http-message sourcecode">
-Want-Representation-Digest: sha-256=1
-Want-Representation-Digest: sha-512=3, sha-256=10, unixsum=0
+Want-Repr-Digest: sha-256=1
+Want-Repr-Digest: sha-512=3, sha-256=10, unixsum=0
 Want-Content-Digest: sha-256=1
 Want-Content-Digest: sha-512=3, sha-256=10, unixsum=0
 </pre><a href="#section-4-8" class="pilcrow">¶</a>
@@ -1691,7 +1691,7 @@ Required policy (<span><a href="https://rfc-editor.org/rfc/rfc8126#section-4.6" 
 <p id="section-5-3">Registrations <span class="bcp14">MUST</span> include the following fields:<a href="#section-5-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5-4.1">Algorithm Key: the Structured Fields key value used in
-<code>Representation-Digest</code>, <code>Content-Digest</code>, <code>Want-Representation-Digest</code> or
+<code>Repr-Digest</code>, <code>Content-Digest</code>, <code>Want-Repr-Digest</code> or
  <code>Want-Content-Digest</code> field Dictionary member keys<a href="#section-5-4.1" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-5-4.2">
@@ -1898,7 +1898,7 @@ will depend on the level of protection the circumstances demand.
 As there is no negotiation, endpoints that depend on a digest for security
 will be vulnerable to attacks on the weakest algorithm they are willing to accept.<a href="#section-6.6-3" class="pilcrow">¶</a></p>
 <p id="section-6.6-4">Transition from weak algorithms is supported
-by negotiation of hashing algorithm using <code>Want-Representation-Digest</code> or <code>Want-Content-Digest</code> (see <a href="#want-fields" class="xref">Section 4</a>)
+by negotiation of hashing algorithm using <code>Want-Repr-Digest</code> or <code>Want-Content-Digest</code> (see <a href="#want-fields" class="xref">Section 4</a>)
 or by sending multiple digests from which the receiver chooses.
 Endpoints are advised that sending multiple values consumes resources,
 which may be wasted if the receiver ignores them (see <a href="#representation-digest" class="xref">Section 2</a>).<a href="#section-6.6-4" class="pilcrow">¶</a></p>
@@ -1946,7 +1946,7 @@ validation of the algorithm types, number of validations, or the size of content
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">Representation-Digest</td>
+              <td class="text-left" rowspan="1" colspan="1">Repr-Digest</td>
               <td class="text-left" rowspan="1" colspan="1">permanent</td>
               <td class="text-left" rowspan="1" colspan="1">
                 <a href="#representation-digest" class="xref">Section 2</a> of this document</td>
@@ -1958,7 +1958,7 @@ validation of the algorithm types, number of validations, or the size of content
                 <a href="#content-digest" class="xref">Section 3</a> of this document</td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">Want-Representation-Digest</td>
+              <td class="text-left" rowspan="1" colspan="1">Want-Repr-Digest</td>
               <td class="text-left" rowspan="1" colspan="1">permanent</td>
               <td class="text-left" rowspan="1" colspan="1">
                 <a href="#want-fields" class="xref">Section 4</a> of this document</td>
@@ -2276,8 +2276,8 @@ Location: /authors/123
 <a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-examples-of-unsolicited-dig" class="section-name selfRef">Examples of Unsolicited Digest</a>
       </h2>
 <p id="appendix-B-1">The following examples demonstrate interactions where a server responds with a
-<code>Representation-Digest</code> or <code>Content-Digest</code> fields even though the client did not solicit one using
-<code>Want-Representation-Digest</code> or <code>Want-Content-Digest</code>.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
+<code>Repr-Digest</code> or <code>Content-Digest</code> fields even though the client did not solicit one using
+<code>Want-Repr-Digest</code> or <code>Want-Content-Digest</code>.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 <p id="appendix-B-2">Some examples include JSON objects in the content.
 For presentation purposes, objects that fit completely within the line-length limits
 are presented on a single line using compact notation with no leading space.
@@ -2287,14 +2287,14 @@ Objects that would exceed line-length limits are presented across multiple lines
 and do not provide canonicalization algorithms for specific formats.
 Examples are calculated inclusive of any space.
 While examples can include both fields,
-<code>Representation-Digest</code> and <code>Content-Digest</code> can be returned independently.<a href="#appendix-B-3" class="pilcrow">¶</a></p>
+<code>Repr-Digest</code> and <code>Content-Digest</code> can be returned independently.<a href="#appendix-B-3" class="pilcrow">¶</a></p>
 <div id="example-full-representation">
 <section id="appendix-B.1">
         <h3 id="name-server-returns-full-represe">
 <a href="#appendix-B.1" class="section-number selfRef">B.1. </a><a href="#name-server-returns-full-represe" class="section-name selfRef">Server Returns Full Representation Data</a>
         </h3>
 <p id="appendix-B.1-1">In this example, the message content conveys complete representation data.
-This means that in the response, <code>Representation-Digest</code> and <code>Content-Digest</code>
+This means that in the response, <code>Repr-Digest</code> and <code>Content-Digest</code>
 are both computed over the JSON object <code>{"hello": "world"}</code>, and thus have the same value.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
 <span id="name-get-request-for-an-item"></span><figure id="figure-10">
           <div id="appendix-B.1-2.1">
@@ -2314,7 +2314,7 @@ NOTE: '\' line wrapping per RFC 8792
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Representation-Digest: \
+Repr-Digest: \
   sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 Content-Digest: \
   sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
@@ -2323,7 +2323,7 @@ Content-Digest: \
 </pre>
 </div>
 <figcaption><a href="#figure-11" class="selfRef">Figure 11</a>:
-<a href="#name-response-with-identical-rep" class="selfRef">Response with identical Representation-Digest and Content-Digest</a>
+<a href="#name-response-with-identical-rep" class="selfRef">Response with identical Repr-Digest and Content-Digest</a>
           </figcaption></figure>
 </section>
 </div>
@@ -2334,7 +2334,7 @@ Content-Digest: \
         </h3>
 <p id="appendix-B.2-1">In this example, a HEAD request is used to retrieve the checksum
 of a resource.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.2-2">The response <code>Representation-Digest</code> field-value is calculated over the JSON object
+<p id="appendix-B.2-2">The response <code>Repr-Digest</code> field-value is calculated over the JSON object
 <code>{"hello": "world"}</code>, which is not shown because there is no payload
 data.
 <code>Content-Digest</code> is computed on empty content.<a href="#appendix-B.2-2" class="pilcrow">¶</a></p>
@@ -2356,7 +2356,7 @@ NOTE: '\' line wrapping per RFC 8792
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Representation-Digest: \
+Repr-Digest: \
   sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 Content-Digest: \
   sha-256=:47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=:
@@ -2395,7 +2395,7 @@ NOTE: '\' line wrapping per RFC 8792
 HTTP/1.1 206 Partial Content
 Content-Type: application/json
 Content-Range: bytes 1-7/18
-Representation-Digest: \
+Repr-Digest: \
   sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 Content-Digest: \
   sha-256=:Wqdirjg/u3J688ejbUlApbjECpiUUtIwT8lY/z81Tno=:
@@ -2404,18 +2404,15 @@ Content-Digest: \
 </pre>
 </div>
 <figcaption><a href="#figure-15" class="selfRef">Figure 15</a>:
-<a href="#name-partial-response-with-both-" class="selfRef">Partial response with both Content-Digest and Representation-Digest</a>
+<a href="#name-partial-response-with-both-" class="selfRef">Partial response with both Content-Digest and Repr-Digest</a>
           </figcaption></figure>
 <p id="appendix-B.3-4">In the response message above, note that the
-<code>Representation-Digest</code> and <code>Content-Digests</code> are different.
-The <code>Representation-Digest</code> field-value is calculated across the entire JSON object
+<code>Repr-Digest</code> and <code>Content-Digests</code> are different.
+The <code>Repr-Digest</code> field-value is calculated across the entire JSON object
 <code>{"hello": "world"}</code>, and the field is<a href="#appendix-B.3-4" class="pilcrow">¶</a></p>
 <div id="appendix-B.3-5">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
-Representation-Digest: \
-  sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:`
+Repr-Digest: sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 </pre><a href="#appendix-B.3-5" class="pilcrow">¶</a>
 </div>
 <p id="appendix-B.3-6">However, since the message content is constrained to bytes 1-7,
@@ -2436,25 +2433,22 @@ Content-Digest: \
         <h3 id="name-client-and-server-provide-f">
 <a href="#appendix-B.4" class="section-number selfRef">B.4. </a><a href="#name-client-and-server-provide-f" class="section-name selfRef">Client and Server Provide Full Representation Data</a>
         </h3>
-<p id="appendix-B.4-1">The request contains a <code>Representation-Digest</code> field-value calculated on the enclosed
+<p id="appendix-B.4-1">The request contains a <code>Repr-Digest</code> field-value calculated on the enclosed
 representation. It also includes an <code>Accept-Encoding: br</code> header field that advertises the
 client supports Brotli encoding.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.4-2">The response includes a <code>Content-Encoding: br</code> that indicates the selected
-representation is Brotli-encoded. The <code>Representation-Digest</code> field-value is therefore
+representation is Brotli-encoded. The <code>Repr-Digest</code> field-value is therefore
 different compared to the request.<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
 <p id="appendix-B.4-3">For presentation purposes, the response body is displayed as a Base64-encoded string because it contains
 non-printable characters.<a href="#appendix-B.4-3" class="pilcrow">¶</a></p>
 <span id="name-put-request-with-digest"></span><figure id="figure-16">
           <div id="appendix-B.4-4.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 PUT /items/123 HTTP/1.1
 Host: foo.example
 Content-Type: application/json
 Accept-Encoding: br
-Representation-Digest: \
-  sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
+Repr-Digest: sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 
 {"hello": "world"}
 </pre>
@@ -2465,15 +2459,12 @@ Representation-Digest: \
 <span id="name-response-with-digest-of-enc"></span><figure id="figure-17">
           <div id="appendix-B.4-5.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Location: /items/123
 Content-Encoding: br
 Content-Length: 22
-Representation-Digest: \
-  sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:
+Repr-Digest: sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:
 
 iwiAeyJoZWxsbyI6ICJ3b3JsZCJ9Aw==
 </pre>
@@ -2488,21 +2479,18 @@ iwiAeyJoZWxsbyI6ICJ3b3JsZCJ9Aw==
         <h3 id="name-client-provides-full-repres">
 <a href="#appendix-B.5" class="section-number selfRef">B.5. </a><a href="#name-client-provides-full-repres" class="section-name selfRef">Client Provides Full Representation Data, Server Provides No Representation Data</a>
         </h3>
-<p id="appendix-B.5-1">The request <code>Representation-Digest</code> field-value is calculated on the enclosed payload.<a href="#appendix-B.5-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.5-2">The response <code>Representation-Digest</code> field-value
+<p id="appendix-B.5-1">The request <code>Repr-Digest</code> field-value is calculated on the enclosed payload.<a href="#appendix-B.5-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.5-2">The response <code>Repr-Digest</code> field-value
 depends on the representation metadata header fields, including
 <code>Content-Encoding: br</code> even when the response does not contain content.<a href="#appendix-B.5-2" class="pilcrow">¶</a></p>
 <div id="appendix-B.5-3">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 PUT /items/123 HTTP/1.1
 Host: foo.example
 Content-Type: application/json
 Content-Length: 18
 Accept-Encoding: br
-Representation-Digest: \
-  sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
+Repr-Digest: sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 
 {"hello": "world"}
 </pre><a href="#appendix-B.5-3" class="pilcrow">¶</a>
@@ -2510,13 +2498,10 @@ Representation-Digest: \
 <span id="name-empty-response-with-digest"></span><figure id="figure-18">
           <div id="appendix-B.5-4.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 204 No Content
 Content-Type: application/json
 Content-Encoding: br
-Representation-Digest: \
-  sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:
+Repr-Digest: sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:
 
 </pre>
 </div>
@@ -2536,14 +2521,11 @@ base64-encoded string.<a href="#appendix-B.6-2" class="pilcrow">¶</a></p>
 <span id="name-put-request-with-digest-2"></span><figure id="figure-19">
           <div id="appendix-B.6-3.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 PUT /items/123 HTTP/1.1
 Host: foo.example
 Content-Type: application/json
 Accept-Encoding: br
-Representation-Digest: \
-  sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
+Repr-Digest: sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 
 {"hello": "world"}
 </pre>
@@ -2560,7 +2542,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Encoding: br
 Content-Location: /items/123
-Representation-Digest: \
+Repr-Digest: \
   sha-256=:4REjxQ4yrqUVicfSKYNO/cF9zNj5ANbzgDZt3/h3Qxo=:,\
   sha-512=:pxo7aYzcGI88pnDnoSmAnaOEVys0MABhgvHY9+VI+ElE60jBCwnMPyA/\
   s3NF3ZO5oIWA7lf8ukk+5KJzm3p5og==:
@@ -2578,22 +2560,19 @@ iwiAeyJoZWxsbyI6ICJ3b3JsZCJ9Aw==
         <h3 id="name-post-response-does-not-refe">
 <a href="#appendix-B.7" class="section-number selfRef">B.7. </a><a href="#name-post-response-does-not-refe" class="section-name selfRef">POST Response does not Reference the Request URI</a>
         </h3>
-<p id="appendix-B.7-1">The request <code>Representation-Digest</code> field-value is computed on the enclosed representation (see
+<p id="appendix-B.7-1">The request <code>Repr-Digest</code> field-value is computed on the enclosed representation (see
 <a href="#state-changing-requests" class="xref">Section 2.1</a>).<a href="#appendix-B.7-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.7-2">The representation enclosed in the response refers to the resource identified by
-<code>Content-Location</code> (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-6.4.2" class="relref">Section 6.4.2</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>). <code>Representation-Digest</code> is thus computed on the enclosed representation.<a href="#appendix-B.7-2" class="pilcrow">¶</a></p>
+<code>Content-Location</code> (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-6.4.2" class="relref">Section 6.4.2</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>). <code>Repr-Digest</code> is thus computed on the enclosed representation.<a href="#appendix-B.7-2" class="pilcrow">¶</a></p>
 <span id="name-post-request-with-digest"></span><figure id="figure-21">
           <div id="appendix-B.7-3.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 POST /books HTTP/1.1
 Host: foo.example
 Content-Type: application/json
 Accept: application/json
 Accept-Encoding: identity
-Representation-Digest: \
-  sha-256=:bWopGGNiZtbVgHsG+I4knzfEJpmmmQHf7RHDXA3o1hQ=:
+Repr-Digest: sha-256=:bWopGGNiZtbVgHsG+I4knzfEJpmmmQHf7RHDXA3o1hQ=:
 
 {"title": "New Title"}
 </pre>
@@ -2604,14 +2583,11 @@ Representation-Digest: \
 <span id="name-response-with-digest-of-res"></span><figure id="figure-22">
           <div id="appendix-B.7-4.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 201 Created
 Content-Type: application/json
 Content-Location: /books/123
 Location: /books/123
-Representation-Digest: \
-  sha-256=:yxOAqEeoj+reqygSIsLpT0LhumrNkIds5uLKtmdLyYE=:
+Repr-Digest: sha-256=:yxOAqEeoj+reqygSIsLpT0LhumrNkIds5uLKtmdLyYE=:
 
 {
   "id": "123",
@@ -2623,7 +2599,7 @@ Representation-Digest: \
 <a href="#name-response-with-digest-of-res" class="selfRef">Response with Digest of Resource</a>
           </figcaption></figure>
 <p id="appendix-B.7-5">Note that a <code>204 No Content</code> response without content but with the same
-<code>Representation-Digest</code> field-value would have been legitimate too.
+<code>Repr-Digest</code> field-value would have been legitimate too.
 In that case, <code>Content-Digest</code> would have been computed on an empty content.<a href="#appendix-B.7-5" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2632,24 +2608,21 @@ In that case, <code>Content-Digest</code> would have been computed on an empty c
         <h3 id="name-post-response-describes-the">
 <a href="#appendix-B.8" class="section-number selfRef">B.8. </a><a href="#name-post-response-describes-the" class="section-name selfRef">POST Response Describes the Request Status</a>
         </h3>
-<p id="appendix-B.8-1">The request <code>Representation-Digest</code> field-value is computed on the enclosed representation (see
+<p id="appendix-B.8-1">The request <code>Repr-Digest</code> field-value is computed on the enclosed representation (see
 <a href="#state-changing-requests" class="xref">Section 2.1</a>).<a href="#appendix-B.8-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.8-2">The representation enclosed in the response describes the status of the request,
-so <code>Representation-Digest</code> is computed on that enclosed representation.<a href="#appendix-B.8-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.8-3">Response <code>Representation-Digest</code> has no explicit relation with the resource referenced by
+so <code>Repr-Digest</code> is computed on that enclosed representation.<a href="#appendix-B.8-2" class="pilcrow">¶</a></p>
+<p id="appendix-B.8-3">Response <code>Repr-Digest</code> has no explicit relation with the resource referenced by
 <code>Location</code>.<a href="#appendix-B.8-3" class="pilcrow">¶</a></p>
 <span id="name-post-request-with-digest-2"></span><figure id="figure-23">
           <div id="appendix-B.8-4.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 POST /books HTTP/1.1
 Host: foo.example
 Content-Type: application/json
 Accept: application/json
 Accept-Encoding: identity
-Representation-Digest: \
-  sha-256=:bWopGGNiZtbVgHsG+I4knzfEJpmmmQHf7RHDXA3o1hQ=:
+Repr-Digest: sha-256=:bWopGGNiZtbVgHsG+I4knzfEJpmmmQHf7RHDXA3o1hQ=:
 
 {"title": "New Title"}
 </pre>
@@ -2660,12 +2633,9 @@ Representation-Digest: \
 <span id="name-response-with-digest-of-rep"></span><figure id="figure-24">
           <div id="appendix-B.8-5.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 201 Created
 Content-Type: application/json
-Representation-Digest: \
-  sha-256=:2LBp5RKZGpsSNf8BPXlXrX4Td4Tf5R5bZ9z7kdi5VvY=:
+Repr-Digest: sha-256=:2LBp5RKZGpsSNf8BPXlXrX4Td4Tf5R5bZ9z7kdi5VvY=:
 Location: /books/123
 
 {
@@ -2690,23 +2660,20 @@ Location: /books/123
 effective request URI.<a href="#appendix-B.9-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.9-2">The PATCH request uses the <code>application/merge-patch+json</code> media type defined in
 <span>[<a href="#RFC7396" class="xref">RFC7396</a>]</span>.<a href="#appendix-B.9-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.9-3"><code>Representation-Digest</code> is calculated on the enclosed payload, which corresponds to the patch
+<p id="appendix-B.9-3"><code>Repr-Digest</code> is calculated on the enclosed payload, which corresponds to the patch
 document.<a href="#appendix-B.9-3" class="pilcrow">¶</a></p>
-<p id="appendix-B.9-4">The response <code>Representation-Digest</code> field-value is computed on the complete representation of the patched
+<p id="appendix-B.9-4">The response <code>Repr-Digest</code> field-value is computed on the complete representation of the patched
 resource.<a href="#appendix-B.9-4" class="pilcrow">¶</a></p>
 <span id="name-patch-request-with-digest"></span><div id="fig-patch">
 <figure id="figure-25">
           <div id="appendix-B.9-5.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 PATCH /books/123 HTTP/1.1
 Host: foo.example
 Content-Type: application/merge-patch+json
 Accept: application/json
 Accept-Encoding: identity
-Representation-Digest: \
-  sha-256=:bWopGGNiZtbVgHsG+I4knzfEJpmmmQHf7RHDXA3o1hQ=:
+Repr-Digest: sha-256=:bWopGGNiZtbVgHsG+I4knzfEJpmmmQHf7RHDXA3o1hQ=:
 
 {"title": "New Title"}
 </pre>
@@ -2718,12 +2685,9 @@ Representation-Digest: \
 <span id="name-response-with-digest-of-repr"></span><figure id="figure-26">
           <div id="appendix-B.9-6.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 200 OK
 Content-Type: application/json
-Representation-Digest: \
-  sha-256=:yxOAqEeoj+reqygSIsLpT0LhumrNkIds5uLKtmdLyYE=:
+Repr-Digest: sha-256=:yxOAqEeoj+reqygSIsLpT0LhumrNkIds5uLKtmdLyYE=:
 
 {
   "id": "123",
@@ -2735,7 +2699,7 @@ Representation-Digest: \
 <a href="#name-response-with-digest-of-repr" class="selfRef">Response with Digest of Representation</a>
           </figcaption></figure>
 <p id="appendix-B.9-7">Note that a <code>204 No Content</code> response without content but with the same
-<code>Representation-Digest</code> field-value would have been legitimate too.<a href="#appendix-B.9-7" class="pilcrow">¶</a></p>
+<code>Repr-Digest</code> field-value would have been legitimate too.<a href="#appendix-B.9-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="error-responses">
@@ -2749,16 +2713,13 @@ target resource. Instead, it refers to the representation of the error.<a href="
 patch the resource located at /books/123. However, the resource does not exist
 and the server generates a 404 response with a body that describes the error in
 accordance with <span>[<a href="#RFC7807" class="xref">RFC7807</a>]</span>.<a href="#appendix-B.10-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.10-3">The response <code>Representation-Digest</code> field-value is computed on this enclosed representation.<a href="#appendix-B.10-3" class="pilcrow">¶</a></p>
+<p id="appendix-B.10-3">The response <code>Repr-Digest</code> field-value is computed on this enclosed representation.<a href="#appendix-B.10-3" class="pilcrow">¶</a></p>
 <span id="name-response-with-digest-of-err"></span><figure id="figure-27">
           <div id="appendix-B.10-4.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 404 Not Found
 Content-Type: application/problem+json
-Representation-Digest: \
-  sha-256=:KPqhVXAT25LLitV1w0O167unHmVQusu+fpxm65zAsvk=:
+Repr-Digest: sha-256=:KPqhVXAT25LLitV1w0O167unHmVQusu+fpxm65zAsvk=:
 
 {
   "title": "Not Found",
@@ -2777,9 +2738,9 @@ Representation-Digest: \
         <h3 id="name-use-with-trailer-fields-and">
 <a href="#appendix-B.11" class="section-number selfRef">B.11. </a><a href="#name-use-with-trailer-fields-and" class="section-name selfRef">Use with Trailer Fields and Transfer Coding</a>
         </h3>
-<p id="appendix-B.11-1">An origin server sends <code>Representation-Digest</code> as trailer field, so it can calculate digest-value
+<p id="appendix-B.11-1">An origin server sends <code>Repr-Digest</code> as trailer field, so it can calculate digest-value
 while streaming content and thus mitigate resource consumption.
-The <code>Representation-Digest</code> field-value is the same as in <a href="#example-full-representation" class="xref">Appendix B.1</a> because <code>Representation-Digest</code> is designed to
+The <code>Repr-Digest</code> field-value is the same as in <a href="#example-full-representation" class="xref">Appendix B.1</a> because <code>Repr-Digest</code> is designed to
 be independent from the use of one or more transfer codings (see <a href="#representation-digest" class="xref">Section 2</a>).<a href="#appendix-B.11-1" class="pilcrow">¶</a></p>
 <span id="name-get-request"></span><figure id="figure-28">
           <div id="appendix-B.11-2.1">
@@ -2795,8 +2756,6 @@ Host: foo.example
 <span id="name-chunked-response-with-diges"></span><figure id="figure-29">
           <div id="appendix-B.11-3.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 200 OK
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -2809,8 +2768,7 @@ Trailer: Digest
 2\r\n
 "}\r\n
 0\r\n
-Representation-Digest: \
-  sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
+Repr-Digest: sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 
 </pre>
 </div>
@@ -2823,11 +2781,11 @@ Representation-Digest: \
 </div>
 <div id="examples-solicited">
 <section id="appendix-C">
-      <h2 id="name-examples-of-want-representa">
-<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-examples-of-want-representa" class="section-name selfRef">Examples of Want-Representation-Digest Solicited Digest</a>
+      <h2 id="name-examples-of-want-repr-diges">
+<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-examples-of-want-repr-diges" class="section-name selfRef">Examples of Want-Repr-Digest Solicited Digest</a>
       </h2>
 <p id="appendix-C-1">The following examples demonstrate interactions where a client solicits a
-<code>Representation-Digest</code> using <code>Want-Representation-Digest</code>.
+<code>Repr-Digest</code> using <code>Want-Repr-Digest</code>.
 The behavior of <code>Content-Digest</code> and <code>Want-Content-Digest</code> is identical.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
 <p id="appendix-C-2">Some examples include JSON objects in the content.
 For presentation purposes, objects that fit completely within the line-length limits
@@ -2844,27 +2802,24 @@ Examples are calculated inclusive of any space.<a href="#appendix-C-3" class="pi
         </h3>
 <p id="appendix-C.1-1">The client requests a digest, preferring "sha". The server is free to reply with
 "sha-256" anyway.<a href="#appendix-C.1-1" class="pilcrow">¶</a></p>
-<span id="name-get-request-with-want-repre"></span><figure id="figure-30">
+<span id="name-get-request-with-want-repr-"></span><figure id="figure-30">
           <div id="appendix-C.1-2.1">
 <pre class="lang-http-message sourcecode">
 GET /items/123 HTTP/1.1
 Host: foo.example
-Want-Representation-Digest: sha-256=3, sha=10
+Want-Repr-Digest: sha-256=3, sha=10
 
 </pre>
 </div>
 <figcaption><a href="#figure-30" class="selfRef">Figure 30</a>:
-<a href="#name-get-request-with-want-repre" class="selfRef">GET Request with Want-Representation-Digest</a>
+<a href="#name-get-request-with-want-repr-" class="selfRef">GET Request with Want-Repr-Digest</a>
           </figcaption></figure>
 <span id="name-response-with-different-alg"></span><figure id="figure-31">
           <div id="appendix-C.1-3.1">
 <pre class="lang-http-message sourcecode">
-NOTE: '\' line wrapping per RFC 8792
-
 HTTP/1.1 200 OK
 Content-Type: application/json
-Representation-Digest: \
-  sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
+Repr-Digest: sha-256=:X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=:
 
 {"hello": "world"}
 </pre>
@@ -2882,17 +2837,17 @@ Representation-Digest: \
 <p id="appendix-C.2-1">The client requests a "sha" digest because that is the only algorithm it
 supports. The server is not obliged to produce a response containing a "sha"
 digest, it instead uses a different algorithm.<a href="#appendix-C.2-1" class="pilcrow">¶</a></p>
-<span id="name-get-request-with-want-repres"></span><figure id="figure-32">
+<span id="name-get-request-with-want-repr-d"></span><figure id="figure-32">
           <div id="appendix-C.2-2.1">
 <pre class="lang-http-message sourcecode">
 GET /items/123 HTTP/1.1
 Host: foo.example
-Want-Representation-Digest: sha=10
+Want-Repr-Digest: sha=10
 
 </pre>
 </div>
 <figcaption><a href="#figure-32" class="selfRef">Figure 32</a>:
-<a href="#name-get-request-with-want-repres" class="selfRef">GET Request with Want-Representation-Digest</a>
+<a href="#name-get-request-with-want-repr-d" class="selfRef">GET Request with Want-Repr-Digest</a>
           </figcaption></figure>
 <span id="name-response-with-unsupported-a"></span><figure id="figure-33">
           <div id="appendix-C.2-3.1">
@@ -2901,7 +2856,7 @@ NOTE: '\' line wrapping per RFC 8792
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Representation-Digest: \
+Repr-Digest: \
   sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX+TaPm+AbwAgBWnrI\
   iYllu7BNNyealdVLvRwEmTHWXvJwew==:
 
@@ -2921,22 +2876,22 @@ Representation-Digest: \
 <p id="appendix-C.3-1"><a href="#ex-server-selects-unsupported-algorithm" class="xref">Appendix C.2</a> is an example where a server ignores
 the client's preferred digest algorithm. Alternatively a server can also reject
 the request and return an error.<a href="#appendix-C.3-1" class="pilcrow">¶</a></p>
-<p id="appendix-C.3-2">In this example, the client requests a "sha" <code>Representation-Digest</code>, and the server returns an
+<p id="appendix-C.3-2">In this example, the client requests a "sha" <code>Repr-Digest</code>, and the server returns an
 error with problem details <span>[<a href="#RFC7807" class="xref">RFC7807</a>]</span> contained in the content. The problem
 details contain a list of the hashing algorithms that the server supports. This
 is purely an example, this specification does not define any format or
 requirements for such content.<a href="#appendix-C.3-2" class="pilcrow">¶</a></p>
-<span id="name-get-request-with-want-represe"></span><figure id="figure-34">
+<span id="name-get-request-with-want-repr-di"></span><figure id="figure-34">
           <div id="appendix-C.3-3.1">
 <pre class="lang-http-message sourcecode">
 GET /items/123 HTTP/1.1
 Host: foo.example
-Want-Representation-Digest: sha=10
+Want-Repr-Digest: sha=10
 
 </pre>
 </div>
 <figcaption><a href="#figure-34" class="selfRef">Figure 34</a>:
-<a href="#name-get-request-with-want-represe" class="selfRef">GET Request with Want-Representation-Digest</a>
+<a href="#name-get-request-with-want-repr-di" class="selfRef">GET Request with Want-Repr-Digest</a>
           </figcaption></figure>
 <span id="name-response-advertising-the-su"></span><figure id="figure-35">
           <div id="appendix-C.3-4.1">
@@ -2987,7 +2942,7 @@ and Erik Wilde.<a href="#appendix-D-2" class="pilcrow">¶</a></p>
 <a href="#name-code-samples" class="section-name selfRef">Code Samples</a>
       </h2>
 <p id="appendix-E-1"><em>RFC Editor: Please remove this section before publication.</em><a href="#appendix-E-1" class="pilcrow">¶</a></p>
-<p id="appendix-E-2">How can I generate and validate the <code>Representation-Digest</code> values shown in the examples
+<p id="appendix-E-2">How can I generate and validate the <code>Repr-Digest</code> values shown in the examples
 throughout this document?<a href="#appendix-E-2" class="pilcrow">¶</a></p>
 <p id="appendix-E-3">The following python3 code can be used to generate digests for JSON objects
 using SHA algorithms for a range of encodings. Note that these are formatted as
